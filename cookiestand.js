@@ -1,16 +1,3 @@
-/*var psCookieStand = {
-name: 'pioneer Square',
-minCustomer: 17,
-maxCustomer: 88,
-aveCookieSale: 5.2
-function cookieSales() {
-  //INSERT MATH OPERATION HERE//
-  document.getElementsById('cookieSales').innerHTML= Math.random ();
-  console.log ("min,max");
-}
-}*/
-
-
 var salmonCookies = {
   location: 'pioneer square',
   minCustomer: 17,
@@ -36,22 +23,133 @@ var salmonCookies = {
 
     }
     document.getElementById("total").innerHTML = "total: " + total;
-
-  /*document.getElementById("0").innerHTML = "10am:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("1").innerHTML = "11am:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("2").innerHTML = "12pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("3").innerHTML = "1pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("4").innerHTML = "2pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("5").innerHTML = "3pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("6").innerHTML = "4pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-  document.getElementById("7").innerHTML = "5pm:" + " " + Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
-*/
-}
-
+  }
  }
  salmonCookies.random();
 
+ var salmonCookies1 = {
+   location: 'Portland Airport',
+   minCustomer: 6,
+   maxCustomer: 24,
+   avgCookieSale: 1.2,
+   numberOfCookiesPerHour:[],
+   calculateCookies:function(){
+     var total = 0;
+     for(var i=0; i<8; i++){
+       var number = Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
+       this.numberOfCookiesPerHour.push(number);
+       total += number;
 
+       console.log(this.numberOfCookiesPerHour);
+     }
+     return total;
+   },
+   random: function(){
+     var total = this.calculateCookies();
+     var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+      for (var i=0; i<8; i++){
+       console.log("pa"+ i);
+       document.getElementById("pa"+i).innerHTML = time[i] + " " + this.numberOfCookiesPerHour[i];
+
+     }
+     document.getElementById("patotal").innerHTML = "total: " + total;
+
+}
+}
+salmonCookies1.random();
+
+var salmonCookies2 = {
+  location: 'Washington Square',
+  minCustomer: 11,
+  maxCustomer: 38,
+  avgCookieSale: 1.9,
+  numberOfCookiesPerHour:[],
+  calculateCookies:function(){
+    var total = 0;
+    for(var i=0; i<8; i++){
+      var number = Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
+      this.numberOfCookiesPerHour.push(number);
+      total += number;
+
+      console.log(this.numberOfCookiesPerHour);
+    }
+    return total;
+  },
+  random: function(){
+    var total = this.calculateCookies();
+    var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+     for (var i=0; i<8; i++){
+      console.log("pa"+ i);
+      document.getElementById("ws"+i).innerHTML = time[i] + " " + this.numberOfCookiesPerHour[i];
+
+    }
+    document.getElementById("wstotal").innerHTML = "total: " + total;
+
+}
+}
+var salmonCookies3 = {
+  location: 'Sellwood',
+  minCustomer: 20,
+  maxCustomer: 48,
+  avgCookieSale: 3.3,
+  numberOfCookiesPerHour:[],
+  calculateCookies:function(){
+    var total = 0;
+    for(var i=0; i<8; i++){
+      var number = Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
+      this.numberOfCookiesPerHour.push(number);
+      total += number;
+
+      console.log(this.numberOfCookiesPerHour);
+    }
+    return total;
+  },
+  random: function(){
+    var total = this.calculateCookies();
+    var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+     for (var i=0; i<8; i++){
+      console.log("pa"+ i);
+      document.getElementById("s"+i).innerHTML = time[i] + " " + this.numberOfCookiesPerHour[i];
+
+    }
+    document.getElementById("stotal").innerHTML = "total: " + total;
+
+}
+}
+var salmonCookies4 = {
+  location: 'Pearl District',
+  minCustomer: 20,
+  maxCustomer: 48,
+  avgCookieSale: 3.3,
+  numberOfCookiesPerHour:[],
+  calculateCookies:function(){
+    var total = 0;
+    for(var i=0; i<8; i++){
+      var number = Math.floor(Math.random()*(salmonCookies.maxCustomer-salmonCookies.minCustomer+1) + salmonCookies.minCustomer);
+      this.numberOfCookiesPerHour.push(number);
+      total += number;
+
+      console.log(this.numberOfCookiesPerHour);
+    }
+    return total;
+  },
+  random: function(){
+    var total = this.calculateCookies();
+    var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+     for (var i=0; i<8; i++){
+      console.log("pd"+ i);
+      document.getElementById("pd"+i).innerHTML = time[i] + " " + this.numberOfCookiesPerHour[i];
+
+    }
+    document.getElementById("pdtotal").innerHTML = "total: " + total;
+
+}
+}
+
+salmonCookies1.random();
+salmonCookies2.random();
+salmonCookies3.random();
+salmonCookies4.random();
  /*var salmonCookies1 = {
    location: 'Portland Airport',
    minCustomer: 6,
