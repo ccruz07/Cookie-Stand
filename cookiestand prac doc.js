@@ -94,3 +94,15 @@ var salmonCookies1 = {
 
 }
 salmonCookies1.calculateCookies();
+
+//STORE 2- PORTLAND AIRPORT-FUNCTION #3
+function createTable(){
+  var table = document.getElementById('storelist2');
+  var data = document.createElement('h2');
+  var text = document.createTextNode(salmonCookies1.location);
+  data.appendChild(text);
+  table.appendChild(data);
+  var cookieData = salmonCookies1.getCookieOutput();
+  table.appendChild(cookieData);
+}
+createTable();
