@@ -1,0 +1,29 @@
+h1 {
+font-family: 'Open Sans', sans-serif, Arial;
+color: blue;
+}
+
+h2 {
+  font-family:'Open Sans', sans-serif, Arial;
+  color: green;
+}
+
+/*h3 TBA*/
+
+li{
+  font-family: courier, monospace;
+  color:#002a2a;
+}
+div {
+  display: inline;
+ height: 150px;
+ width:  250px;
+ background-color: orange;
+
+}
+
+div{
+  display: inline-block;
+  height: :150px;width: 250px;
+  background-color: yellow;
+}
