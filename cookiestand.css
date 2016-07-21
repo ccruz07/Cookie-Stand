@@ -15,15 +15,18 @@ li{
   color:#002a2a;
 }
 div {
-  display: inline;
  height: 150px;
  width:  250px;
- background-color: orange;
+ }
 
+ .orange{
+ background-color: orange;
 }
 
-div{
-  display: inline-block;
-  height: :150px;width: 250px;
+.yellow{
   background-color: yellow;
+}
+.fuchsia{
+  background-color:fuchsia;
+
 }

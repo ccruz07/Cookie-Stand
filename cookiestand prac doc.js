@@ -36,23 +36,10 @@
       row.appendChild(data);
       return row;
   },
-  random: function(){
-    var total = this.calculateCookies();
-    var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
-    for (var i=0; i<8; i++){
-    //  document.getElementById(i).innerHTML = time[i] + " " + this.numberOfCookiesPerHour[i];
-
-    }
-  //  document.getElementById("total").innerHTML = "total: " + total;
-  }
 }
- salmonCookies.random();
+
+ salmonCookies.calculateCookies();
 function createTable(){
-/*var row = document.createElement('tr');
-var data = document.createElement('td');
-var text = document.createTextNode(salmonCookies.location);
-data.appendChild(text);
-row.appendChild(data);*/
 var table = document.getElementById('storeList');
 var data = document.createElement('h2');
 var text = document.createTextNode(salmonCookies.location);
