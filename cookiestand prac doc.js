@@ -126,6 +126,7 @@ var salmonCookies2 = {
 
       console.log(this.numberOfCookiesPerHour);
     }
+    this.totalCookies = total;
     return total;
   },
 
@@ -182,6 +183,7 @@ var salmonCookies3 = {
 
       console.log(this.numberOfCookiesPerHour);
     }
+    this.totalCookies = total;
     return total;
   },
   //STORE 4- FUNCTION 2
@@ -217,3 +219,4 @@ function createTable4(){
 
 }
 createTable4();
+//STORE 5
