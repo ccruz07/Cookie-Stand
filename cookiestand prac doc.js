@@ -184,3 +184,36 @@ var salmonCookies3 = {
     }
     return total;
   },
+  //STORE 4- FUNCTION 2
+  getCookieOutput:function(){
+    var time =['10am', '11am', '12pm','1pm','2pm', '3pm', '4pm', '5pm'];
+    var row = document.createElement('ul');
+    for(i=0; i<this.numberOfCookiesPerHour.length;i++)
+  {
+    var cell = document.createElement('li');
+    var data = document.createTextNode(time[i] + ' ' +this.numberOfCookiesPerHour[i]);
+    cell.appendChild(data);
+    row.appendChild(cell);
+  }
+
+    var data = document.createElement('li');
+    var text = document.createTextNode('Total:' +this.totalCookies);
+    data.appendChild(text);
+    row.appendChild(data);
+    return row;
+
+  },
+}
+salmonCookies3.calculateCookies();
+//STORE 4 - FUNCTION 3
+function createTable4(){
+  var table = document.getElementById('storeList4');
+  var data = document.createElement('h2');
+  var text = document.createTextNode(salmonCookies3.location);
+  data.appendChild(text);
+  table.appendChild(data);
+  var cookieData =salmonCookies3.getCookieOutput();
+  table.appendChild(cookieData);
+
+}
+createTable4();
