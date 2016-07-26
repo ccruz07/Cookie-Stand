@@ -39,12 +39,10 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
 }
 //STORE INFO STARTS HERE-
   var row = document.createElement('tr');
-  var cookieStore = ["Pioneer Square", "Portland Airport"];
   var text = document.createTextNode("Pioneer Square");//is this line correct for adding  more store??
      row.appendChild(text);
      this.calculateCookies();
     console.log(this.numberOfCookiesPerHour.length);
-    for (i=0; i<cookieStore.length;i++)//does not add to the table
 
     for (i=0; i<this.numberOfCookiesPerHour.length; i++)
     {
@@ -70,10 +68,14 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
     function createTable(){
       var table = document.getElementById("storeinfo");
       var data = document.createElement("tr");
-      //var cookieSales = ["Pioneer Square", "Portland Airport"];//does not add to the table
+      var cookieSales = [pioneerSquare, portlandAirport];//does not add to the table
 
       table.appendChild(data);
+      for (i=0; i<cookieSales.length; i++);
       var cookieData = pioneerSquare.getCookieOutput();
       table.appendChild(cookieData);
+      var cookieData = portlandAirport.getCookieOutput();
+      table.appendChild(cookieData);
+
 }
       createTable();
