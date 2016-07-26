@@ -1,11 +1,11 @@
 //CLASS 08- CONSTRUCTOR FUNCTIONS STORE #1
   var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies) {
   this.location = location,
-  this.minCustomer = minCustomer,      //17,
-  this.maxCustomer = maxCustomer,      //80,
+  this.minCustomer = minCustomer,
+  this.maxCustomer = maxCustomer,
   this.avgCookieSale = avgCookieSale,
   this.totalCookies = totalCookies,
-  this.numberOfCookiesPerHour=[],  //5.2,
+  this.numberOfCookiesPerHour=[],
   this.addInfo = function() {
     var storeRow = document.createElement("tr");
     var location = document.createElement("td");
@@ -37,6 +37,7 @@
           cell.appendChild(data);
           row.appendChild(cell);
 }
+//STORE #1 - PIONEER SQ
     var row = document.createElement('tr');
     var text = document.createTextNode("Pioneer Square");
     row.appendChild(text);
@@ -56,21 +57,50 @@
       data.appendChild(text);
       row.appendChild(data);
       return row;
-  }
-}
 
   var pioneerSquare = new store("Pioneer Square", 17, 80, 5.2, 0);
-  console.log(pioneerSquare);
+    console.log(pioneerSquare);
 
-  function createTable(){
-    var table = document.getElementById("storeinfo");
-    var data = document.createElement("tr");
+    function createTable(){
+      var table = document.getElementById("storeinfo");
+      var data = document.createElement("tr");
 
-    //data.appendChild(text);
-    table.appendChild(data);
-    var cookieData = pioneerSquare.getCookieOutput();
-    table.appendChild(cookieData);
-    // console.log(cookieData);
+      table.appendChild(data);
+      var cookieData = pioneerSquare.getCookieOutput();
+      table.appendChild(cookieData);
+}
+      createTable();
 
-  }
-  createTable();
+//STORE #2 - PORTLAND AIRPORT
+    var row = document.createElement('tr');
+    var text = document.createTextNode("Portland Airport");
+    row.appendChild(text);
+    this.calculateCookies();
+    console.log(this.numberOfCookiesPerHour.length);
+    for (i=0; i<this.numberOfCookiesPerHour.length; i++)
+    {
+      console.log(i);
+      var cell = document.createElement('td');
+      var data = document.createTextNode(this.numberOfCookiesPerHour[i]);
+      cell.appendChild(data);
+      row.appendChild(cell);
+
+      }
+      var data = document.createElement('td');
+      var text = document.createTextNode('Total: ' + this.totalCookies);
+      data.appendChild(text);
+      row.appendChild(data);
+      return row;
+    }
+  var portlandAirport = new store("Portland Airport", 6, 24, 1.2, 0);
+    console.log(portlandAirport);
+
+    function createTable(){
+      var table = document.getElementById("storeinfoPA");
+      var data = document.createElement("tr");
+
+      table.appendChild(data);
+      var cookieData = portlandAirport.getCookieOutput();
+      table.appendChild(cookieData);
+}
+      createTable();
