@@ -1,5 +1,5 @@
 //CLASS 08- CONSTRUCTOR FUNCTIONS STORE #1
-  var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies) {
+var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies) {
   this.location = location,
   this.minCustomer = minCustomer,
   this.maxCustomer = maxCustomer,
@@ -15,7 +15,7 @@
   this.calculateCookies = function(){
     var total = 0;
     for(var i=0; i<8; i++){
-      var number = Math.floor(Math.random()*(this.maxCustomer-this.minCustomer+1) + this.minCustomer);
+    var number = Math.floor(Math.random()*(this.maxCustomer-this.minCustomer+1) + this.minCustomer);
       this.numberOfCookiesPerHour.push(number);
       total += number;
 
@@ -32,75 +32,48 @@
         cell = document.createElement("td");
         row.appendChild(cell);
     for(i=0; i<time.length; i++){
-          var cell = document.createElement('td');
-          var data = document.createTextNode(time[i]);
+    var cell = document.createElement('td');
+    var data = document.createTextNode(time[i]);
           cell.appendChild(data);
           row.appendChild(cell);
 }
-//STORE #1 - PIONEER SQ
-    var row = document.createElement('tr');
-    var text = document.createTextNode("Pioneer Square");
-    row.appendChild(text);
-    this.calculateCookies();
+//STORE INFO STARTS HERE-
+  var row = document.createElement('tr');
+  var cookieStore = ["Pioneer Square", "Portland Airport"];
+  var text = document.createTextNode("Pioneer Square");//is this line correct for adding  more store??
+     row.appendChild(text);
+     this.calculateCookies();
     console.log(this.numberOfCookiesPerHour.length);
+    for (i=0; i<cookieStore.length;i++)//does not add to the table
+
     for (i=0; i<this.numberOfCookiesPerHour.length; i++)
     {
       console.log(i);
-      var cell = document.createElement('td');
-      var data = document.createTextNode(this.numberOfCookiesPerHour[i]);
+  var cell = document.createElement('td');
+  var data = document.createTextNode(this.numberOfCookiesPerHour[i]);
       cell.appendChild(data);
       row.appendChild(cell);
 
       }
-      var data = document.createElement('td');
-      var text = document.createTextNode('Total: ' + this.totalCookies);
-      data.appendChild(text);
-      row.appendChild(data);
-      return row;
-
-  var pioneerSquare = new store("Pioneer Square", 17, 80, 5.2, 0);
-    console.log(pioneerSquare);
-
-    function createTable(){
-      var table = document.getElementById("storeinfo");
-      var data = document.createElement("tr");
-
-      table.appendChild(data);
-      var cookieData = pioneerSquare.getCookieOutput();
-      table.appendChild(cookieData);
-}
-      createTable();
-
-//STORE #2 - PORTLAND AIRPORT
-    var row = document.createElement('tr');
-    var text = document.createTextNode("Portland Airport");
-    row.appendChild(text);
-    this.calculateCookies();
-    console.log(this.numberOfCookiesPerHour.length);
-    for (i=0; i<this.numberOfCookiesPerHour.length; i++)
-    {
-      console.log(i);
-      var cell = document.createElement('td');
-      var data = document.createTextNode(this.numberOfCookiesPerHour[i]);
-      cell.appendChild(data);
-      row.appendChild(cell);
-
-      }
-      var data = document.createElement('td');
-      var text = document.createTextNode('Total: ' + this.totalCookies);
+  var data = document.createElement('td');
+  var text = document.createTextNode('Total: ' + this.totalCookies);
       data.appendChild(text);
       row.appendChild(data);
       return row;
     }
-  var portlandAirport = new store("Portland Airport", 6, 24, 1.2, 0);
-    console.log(portlandAirport);
+  }
+
+  var pioneerSquare = new store("Pioneer Square", 17, 80, 5.2, 0);
+  var portlandAirport = new store("Portland Airport", 6, 24, 1.2,0);//does not add to the table IDK?
+    //console.log(new store);
 
     function createTable(){
-      var table = document.getElementById("storeinfoPA");
+      var table = document.getElementById("storeinfo");
       var data = document.createElement("tr");
+      //var cookieSales = ["Pioneer Square", "Portland Airport"];//does not add to the table
 
       table.appendChild(data);
-      var cookieData = portlandAirport.getCookieOutput();
+      var cookieData = pioneerSquare.getCookieOutput();
       table.appendChild(cookieData);
 }
       createTable();
