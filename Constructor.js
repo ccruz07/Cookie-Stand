@@ -52,7 +52,10 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
   }
 
   var pioneerSquare = new store("Pioneer Square", 17, 80, 5.2, 0);
-  var portlandAirport = new store("Portland Airport", 6, 24, 1.2,0);//does not add to the table IDK?
+  var portlandAirport = new store("Portland Airport", 6, 24, 1.2,0);
+  var washingtonSquare = new store("Washington Square", 11, 38, 1.9,0);
+  var sellwood = new store("Sellwood", 20, 48, 3.3, 0);
+  var pearlDistrict = new store("Pearl District", 20, 48, 3.3, 0);
     //console.log(new store);
 
     function createTable(){
@@ -69,14 +72,11 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
 
       var table = document.getElementById("storeinfo");
       var data = document.createElement("tr");
-      var cookieSales = [pioneerSquare, portlandAirport];//does not add to the table
-
+      var cookieSales = [pioneerSquare, portlandAirport, washingtonSquare, sellwood, pearlDistrict];
       table.appendChild(data);
       for (var i=0; i<cookieSales.length; i++){
       var cookieData = cookieSales[i].getCookieOutput();
       table.appendChild(cookieData);
-      //var cookieData = portlandAirport.getCookieOutput();
-      //table.appendChild(cookieData);
 
     }
 

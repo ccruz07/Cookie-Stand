@@ -1,18 +1,28 @@
 h1 {
 font-family: 'Open Sans', sans-serif, Arial;
 color: blue;
+text-align: left;
+font-size: 50px;
 }
 
-h2 {
+p{
+  font-size: 20px;
   font-family:'Open Sans', sans-serif, Arial;
-  color: green;
+  color: black;
 }
 
-/*h3 TBA*/
+th {
+  font-family:'Open Sans', sans-serif, Arial;
+  color: black;
+  background-color: fuchsia;
+  font-size: 30px;
+}
 
-li{
-  font-family: courier, monospace;
-  color:#002a2a;
+tr{
+  font-family: courier, monospace, ;
+  color:black;
+  background-color: orange;
+  font-size: 25px;
 }
 div {
  height: 150px;
