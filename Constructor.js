@@ -27,19 +27,9 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
 
   },
   this.getCookieOutput = function(){
-    var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
-    var row = document.getElementById("time");
-        cell = document.createElement("td");
-        row.appendChild(cell);
-    for(i=0; i<time.length; i++){
-    var cell = document.createElement('td');
-    var data = document.createTextNode(time[i]);
-          cell.appendChild(data);
-          row.appendChild(cell);
-}
 //STORE INFO STARTS HERE-
   var row = document.createElement('tr');
-  var text = document.createTextNode("Pioneer Square");//is this line correct for adding  more store??
+  var text = document.createTextNode(this.location);//is this line correct for adding  more store??
      row.appendChild(text);
      this.calculateCookies();
     console.log(this.numberOfCookiesPerHour.length);
@@ -66,6 +56,17 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
     //console.log(new store);
 
     function createTable(){
+      var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+      var row = document.getElementById("time");
+          cell = document.createElement("td");
+          row.appendChild(cell);
+      for(i=0; i<time.length; i++){
+      var cell = document.createElement('td');
+      var data = document.createTextNode(time[i]);
+            cell.appendChild(data);
+            row.appendChild(cell);
+  }
+
       var table = document.getElementById("storeinfo");
       var data = document.createElement("tr");
       var cookieSales = [pioneerSquare, portlandAirport];//does not add to the table
