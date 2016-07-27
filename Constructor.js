@@ -71,11 +71,13 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
       var cookieSales = [pioneerSquare, portlandAirport];//does not add to the table
 
       table.appendChild(data);
-      for (i=0; i<cookieSales.length; i++);
-      var cookieData = pioneerSquare.getCookieOutput();
+      for (var i=0; i<cookieSales.length; i++){
+      var cookieData = cookieSales[i].getCookieOutput();
       table.appendChild(cookieData);
-      var cookieData = portlandAirport.getCookieOutput();
-      table.appendChild(cookieData);
+      //var cookieData = portlandAirport.getCookieOutput();
+      //table.appendChild(cookieData);
+
+    }
 
 }
       createTable();
