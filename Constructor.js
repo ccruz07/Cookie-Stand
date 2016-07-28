@@ -1,4 +1,4 @@
-//CLASS 08- CONSTRUCTOR FUNCTIONS STORE #1
+//CLASS 08- CONSTRUCTOR FUNCTIONS
 var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies) {
   this.location = location,
   this.minCustomer = minCustomer,
@@ -27,9 +27,9 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
 
   },
   this.getCookieOutput = function(){
-//STORE INFO STARTS HERE-
+
   var row = document.createElement('tr');
-  var text = document.createTextNode(this.location);//is this line correct for adding  more store??
+  var text = document.createTextNode(this.location);
      row.appendChild(text);
      this.calculateCookies();
     console.log(this.numberOfCookiesPerHour.length);
