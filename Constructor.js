@@ -1,10 +1,12 @@
 //CLASS 08- CONSTRUCTOR FUNCTIONS
-var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies) {
+var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCookies, pullInfo, formToUse) {
   this.location = location,
   this.minCustomer = minCustomer,
   this.maxCustomer = maxCustomer,
   this.avgCookieSale = avgCookieSale,
   this.totalCookies = totalCookies,
+  this.pullInfo = pullInfo,
+  this.formToUse = formToUse,
   this.numberOfCookiesPerHour=[],
   this.addInfo = function() {
     var storeRow = document.createElement("tr");
@@ -59,15 +61,15 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
     //console.log(new store);
 
     function createTable(){
-      var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+      var time =['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];//time array does not appear with the table-IDK??
       var row = document.getElementById("time");
           cell = document.createElement("td");
-          row.appendChild(cell);
+          //row.appendChild(cell); //turned off to get table function to run w/store data
       for(i=0; i<time.length; i++){
       var cell = document.createElement('td');
       var data = document.createTextNode(time[i]);
             cell.appendChild(data);
-            row.appendChild(cell);
+            //row.appendChild(cell);//turned off to get table function to run w/store data
   }
 
       var table = document.getElementById("storeinfo");
@@ -78,7 +80,19 @@ var store = function (location, minCustomer, maxCustomer, avgCookieSale, totalCo
       var cookieData = cookieSales[i].getCookieOutput();
       table.appendChild(cookieData);
 
-    }
+      document.addEventListener("click", function(pullInfo, formToUse){
+        var data = document.createElement("tr");
+        cell = document.createElement("td");
+        pullInfo = "location " + formToUse.location.value;
+        pullInfo = "minCustomer " + formToUse.minCustomer.value;
+        pullInfo = "maxCustomer " + formToUse.maxCustomer.value;
+        pullInfo = "avgCookieSale" + formToUse.avgCookieSale.value;
+        document.getElementById("form-info ").innerHTML = this.pullInfo;
+        table.appendChild(data);
 
-}
+      });
+
+    }
+  }
+
       createTable();
